@@ -197,6 +197,9 @@ Access to this resource has been blocked.
 
 ## Input structure
 Create a `domains.json` file in root directory with the following structure:
+- `search_params` and `domain_list` must be arrays 
+- type of array values - string
+
 ```json
 
     {

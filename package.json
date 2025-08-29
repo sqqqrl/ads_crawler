@@ -8,17 +8,18 @@
   "main": "lib/src/main.js",
   "scripts": {
     "compile": "npx tsc -p ./tsconfig.json --skipLibCheck",
-    "start": "npm run compile && node ./lib/src/main.js"
+    "start": "npm run compile && node ./lib/src/main.js",
+    "lint": "npx eslint src/**/*.ts --fix"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
-    "@typescript-eslint/parser": "^7.8.0",
-    "@typescript-eslint/typescript-estree": "^7.8.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.2.5"
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
+    "@typescript-eslint/typescript-estree": "^4.6.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint": "^9.34.0",
+    "prettier": "^3.6.2"
   },
   "dependencies": {
     "typescript": "^5.9.2"
