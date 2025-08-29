@@ -1,4 +1,4 @@
-# Сrawling adx.txt
+# Сrawling ads.txt
 
 ## Request processing scenarios
 
@@ -47,25 +47,25 @@
             "timestamp": Date,
             "parse_params": {
                 "url": string,
-                "adsDomains": string[]
+                "ads_domains": string[]
             },
             "http": {
                 "status_code": number,
                 "status_text": string,
                 "headers": {
-                    "content-type": ContentType,
-                    "content-length": string // or number
+                    "content_type": ContentType,
+                    "content_length": string // or number
                 },
                 "response_time_ms": number
             },
             "response_content": {
                 "records_count": number,
                 "list": string[], //if need to see all domains in ads.txt
-                "targets": {
+                "matches": {
                     "domain": string,
                     "exist": boolean,
                     "relationship_type": Relation,
-                    "publisher_id": string,
+                    "publisher_id": string, 
                     "tag_id": string, //if exist
                 }[],
             }
