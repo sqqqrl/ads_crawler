@@ -194,3 +194,19 @@ CF-Cache-Status: MISS
 
 Access to this resource has been blocked.
 ```
+
+## Input structure
+Create a `domains.json` file in root directory with the following structure:
+```json
+
+    {
+        "search_params": [ "test1", "test2" ],
+        "domain_list": [
+            "example1.com",
+            "example2.com",
+            "example3.com",
+            "example4.com",
+        ]
+    }
+
+```

@@ -51,3 +51,7 @@ export const fetchPage = async (url: string, options: FetchOptions = {}): Promis
         throw err;
     }
 }
+
+export const isArray = (input: unknown): input is unknown[] => Array.isArray(input);
+
+export const isValidArray = (input: unknown): input is unknown[] => isArray(input) && input.length > 0;

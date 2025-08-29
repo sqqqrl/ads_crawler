@@ -1,5 +1,8 @@
-import { list } from '../domains.json'
-import { fetchPage } from './utils';
+import { 
+    domain_list as domainList,
+    search_params as searchParams 
+} from '../domains.json'
+import { isValidArray, fetchPage } from './utils';
 
 // const process = () => {
 
@@ -8,9 +11,9 @@ import { fetchPage } from './utils';
 const main = async () => {
     const results: any[] = [];
 
-    for (let i = 0; i < list.length; i++) {
+    for (let i = 0; i < domainList.length; i++) {
         try {
-            const pageContent = await fetchPage(`https://${list[i]}/ads.txt`, {
+            const pageContent = await fetchPage(`https://${domainList[i]}/ads.txt`, {
                 method: "GET"
             });
 
@@ -24,4 +27,10 @@ const main = async () => {
     return results;
 }
 
-(async () => await main())();
+(async () => {
+    if (!isValidArray(domainList) || !isValidArray(searchParams)) {
+        throw new Error(`Incorrect structure of domains.json. Check research.md or readme.md`);
+    }
+
+    await main();
+})();
